@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple website for simple mathematical calculation</title>
+	<style>
+		#container{
+			display: flex;
+  justify-content: center;
+  align-items: center;
+   height: 100vh;
+		}
+		#ohh{
+			position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+     background-color: pink;
+     text-decoration: underline;
+		}
+.area{
+
+	align-content: center;
+	width: 500px; 
+  height: 100px; 
+  border: 2px solid #333; 
+  padding: 20px; 
+  background-color: yellowgreen;
+}
+#pbh{
+	align-content: center;
+	width: 500px; 
+  height: 150px; 
+  border: 2px solid #333; 
+  padding: 20px; 
+  background-color: yellowgreen;
+}
+#triangle{
+	align-content: center;
+	width: 500px; 
+  height: 150px; 
+  border: 2px solid #333; 
+  padding: 20px; 
+  background-color: yellowgreen;
+}
+		.hidden{
+			display: none;
+		}
+		.hiddentri{
+			display: none;
+		}
+		.hiddenpbh{
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		function squarea(){
+			l=parseInt(prompt("enter the length of the side"));
+		A=l*l;
+		alert(A);
+				}
+				function rectarea(){
+					l=parseInt(prompt("enter the length"))
+					b=parseInt(prompt("enter the breadth"))
+					A=l*b;
+					alert(A);
+				}
+
+		function removecsseffect(){
+          ohh.classList.remove('hidden')
+		}
+		function removecsseffect1(){
+          triangle.classList.remove('hiddentri')
+		}
+		function removecsseffect2(){
+          pbh.classList.remove('hiddenpbh')
+		}
+		function circlearea(){
+			r=parseInt(prompt("enter the radius of your circle"));
+           a=22*r*r/7;
+           alert(a);
+		}
+		
+           
+		
+		function isosceles(){
+	      a=parseInt(prompt("enter the common side"))
+	      b=parseInt(prompt("enter the uncommon side"))
+	      asq=a*a;
+	      bsq=(b*b)/4;
+	      whole=(asq-bsq)**(1/2)
+	      A=(b/2)*whole;
+	      alert(A);
+		}
+		function scalene(){
+			s=parseInt(prompt("enter the semi-perimeter"))
+			a=parseInt(prompt("enter side 1"))
+			b=parseInt(prompt("enter side 2"))
+
+			c=parseInt(prompt("enter side 3"))
+          A=(s*(s-a)*(s-b)*(s-c))**(1/2);
+alert(A);
+		}
+		function equilateral(){
+			a=parseInt(prompt("enter the side"))
+			b=3**0.5;
+			A=(b/4)*a;
+			alert(A)
+		}
+
+function pythagorastheorem(){
+			alert("welcome!");
+			alert("you can find the base,perpendicular or hypotenuse by giving me any two parameters");
+}
+function base(){
+	h=parseInt(prompt("enter the hypotenuse"))
+	p=parseInt(prompt("enter the perpendicular"))
+if(p>=h){
+		alert("this is not possible")
+	} 
+	else{
+	b=((h*h)-(p*p))**0.5
+	alert(b)
+}
+}
+function perpendicular(){
+	h=parseInt(prompt("enter the hypotenuse"))
+	b=parseInt(prompt("enter the base"))
+	if(b>=h){
+		alert("this is not possible")
+	} 
+	else{
+	p=((h*h)-(b*b))**0.5;
+	alert(p)
+}}
+
+function hypotenuse(){
+b=parseInt(prompt("enter the perpendicular"))
+p=parseInt(prompt("enter the perpendicular"))
+h=((p*p)+(b*b))**(1/2)
+alert(h)
+}
+	</script>
+
+
+
+</head>
+<body background="D:\BlueStacks/space-background.jpg">
+	
+<div id="container">
+	
+	<h1 onclick="removecsseffect()" class="area">click here for finding area of certain shapes</h1>
+		<div class="hidden" id="ohh" >
+			<h3 onclick="circlearea()">circle</h3>
+			<h3 onclick="squarea()">square</h3>
+			<h3 onclick="rectarea()">rectangle</h3>
+			<h3 onclick="removecsseffect1()">triangle:<h3>
+             <div id="triangle" class="hiddentri">
+             	<h4 onclick="isosceles()">isosceles</h4>
+             	<h4 onclick="scalene()">scalene</h4>
+             	<h4 onclick="equilateral()">equilateral</h4>
+             </div>
+		</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="area">
+	<h1 onclick="removecsseffect2()">click here for pythagorean calculator that calculates sides only</h1>
+	<div id="pbh" class="hiddenpbh">
+	 <h2 onclick="base()">for base</h2>
+	 <h2 onclick="perpendicular()">for perpendicular</h2>
+	 <h2 onclick="hypotenuse()">for hypotenuse</h2>
+	</div>
+</div>
+</div>
+
+</body>
+</html>
